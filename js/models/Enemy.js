@@ -63,8 +63,8 @@ const enemyTypes = {
     },
     boss: {
         name: 'ダンジョンボス',
-        hp: 120,
-        attack: 15,
+        hp: 60,
+        attack: 8,
         defense: 6
     }
 };
