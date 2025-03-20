@@ -104,12 +104,15 @@ body {
     top: 2px;
 }
 
-#battle-log {
-    height: 100px;
-    overflow-y: auto;
-    padding: 8px;
-    border-top: 1px solid #333;
-    font-size: 14px;
+.battle-log {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 20vh; /* 必要に応じて調整 */
+    overflow-y: auto; /* ログが多い場合にスクロール可能に */
+    background: #fff; /* 見やすいように背景色を指定 */
+    box-sizing: border-box;
+    padding-bottom: env(safe-area-inset-bottom); /* ナビゲーションバーを考慮 */
 }
 
 .log-entry {
