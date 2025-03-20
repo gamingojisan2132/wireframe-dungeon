@@ -16,17 +16,21 @@ class GameController {
     
     // ダンジョン開始
     startDungeon() {
-        if (!gameState.player.weapon) {
-            alert('武器を選択してください');
-            return;
-        }
-        
-        screenView.hideScreen('preparation');
-        gameState.dungeon.generate();
-        uiView.updatePlayerStats(gameState.player);
-        uiView.updateProgressBar(gameState.dungeon.progress);
-        this.processDungeonNode();
+    if (!gameState.player.weapon) {
+        alert('武器を選択してください');
+        return;
     }
+    
+    screenView.hideScreen('preparation');
+    gameState.dungeon.generate();
+    uiView.updatePlayerStats(gameState.player);
+    uiView.updateProgressBar(gameState.dungeon.progress);
+    
+    // BGMを再生
+    audioManager.playBgm();
+    
+    this.processDungeonNode();
+     }
     
     // ダンジョンノード処理
     processDungeonNode() {

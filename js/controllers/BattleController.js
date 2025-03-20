@@ -90,7 +90,10 @@ class BattleController {
         // 乱数補正 (±20%)
         const randomFactor = 0.8 + Math.random() * 0.4;
         damage = Math.floor(damage * randomFactor);
-        
+
+        // 攻撃音を再生
+        audioManager.playSfx('slash');
+
         // ダメージ適用
         gameState.enemy.takeDamage(damage);
         
@@ -123,6 +126,9 @@ class BattleController {
         const randomFactor = 0.8 + Math.random() * 0.4;
         damage = Math.floor(damage * randomFactor);
         
+        // ヒット音を再生
+        audioManager.playSfx('hit');
+
         // ダメージ適用
         gameState.player.takeDamage(damage);
         
