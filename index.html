@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ワイヤーフレームダンジョン</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="view-area">
+            <div id="battle-view">
+                <div id="enemy-area">
+                    <div class="enemy-wireframe" id="enemy-graphic">
+                        <!-- 敵の画像がここに表示される -->
+                        <div class="name-display" id="enemy-name">敵の名前</div>
+                    </div>
+                    <div class="status-bar" id="enemy-hp-bar">
+                        <div class="status-bar-fill enemy-hp-fill" id="enemy-hp-fill"></div>
+                        <div class="status-text" id="enemy-hp-text">HP: 100/100</div>
+                    </div>
+                </div>
+                <div id="player-area">
+                    <div class="status-bar">
+                        <div class="status-bar-fill hp-fill" id="player-hp-fill"></div>
+                        <div class="status-text" id="player-hp-text">HP: 100/100</div>
+                    </div>
+                    <div class="status-bar">
+                        <div class="status-bar-fill ap-fill" id="player-ap-fill"></div>
+                        <div class="status-text" id="player-ap-text">AP: 10/10</div>
+                    </div>
+                    <div id="speed-control">
+                        <button id="speed-button">▶▶ 倍速</button>
+                    </div>
+                </div>
+            </div>
+            <div id="dungeon-view">
+                <!-- ダンジョン進行表示 -->
+                <div class="progress-indicator">
+                    <div class="progress-fill" id="dungeon-progress"></div>
+                    <div class="progress-text" id="progress-text">進行度: 0%</div>
+                </div>
+            </div>
+            <div id="battle-log"></div>
+        </div>
+        
+        <!-- アップグレード選択画面 -->
+        <div id="upgrade-screen">
+            <div class="screen-title">アップグレード選択</div>
+            <div class="upgrade-option" data-upgrade="attack">攻撃力20%アップ</div>
+            <div class="upgrade-option" data-upgrade="defense">防御力20%アップ</div>
+            <div class="upgrade-option" data-upgrade="critical">クリティカル率10%アップ</div>
+        </div>
+        
+        <!-- 結果表示画面 -->
+        <div id="result-screen">
+            <div class="screen-title" id="result-title">戦闘結果</div>
+            <div id="result-content">ダンジョンを攻略しました！</div>
+            <div class="button" id="retry-button">再挑戦</div>
+        </div>
+        
+        <!-- 準備画面 -->
+        <div id="preparation-screen">
+            <div class="screen-title">ダンジョン挑戦準備</div>
+            <div id="weapon-selection">
+                <p>武器選択：</p>
+                <div class="button" data-weapon="stick">木の棒 (攻撃力+5)</div>
+                <div class="button" data-weapon="sword">鉄の剣 (攻撃力+10)</div>
+            </div>
+            <div class="button" id="start-button">ダンジョン開始</div>
+        </div>
+    </div>
+
+    <!-- スクリプトの読み込み -->
+    <script src="js/models/GameState.js"></script>
+    <script src="js/models/Player.js"></script>
+    <script src="js/models/Enemy.js"></script>
+    <script src="js/models/Dungeon.js"></script>
+    <script src="js/views/UIView.js"></script>
+    <script src="js/views/BattleView.js"></script>
+    <script src="js/views/ScreenView.js"></script>
+    <script src="js/controllers/InputController.js"></script>
+    <script src="js/controllers/BattleController.js"></script>
+    <script src="js/controllers/GameController.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
